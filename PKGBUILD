@@ -1,15 +1,15 @@
 # SOURCE: https://github.com/arch-linux-gui/alg-pkgbuild/tree/main/calamares
 
 pkgname=calamares
-pkgver=3.2.60
+pkgver=3.2.62
 pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
 url="https://github.com/calamares/calamares/releases/download"
 license=('LGPL')
-depends=('kconfig' 'kcoreaddons' 'kiconthemes' 'ki18n' 'kio' 'solid' 'yaml-cpp' 'kpmcore' 'mkinitcpio-openswap'
-         'boost-libs' 'ckbcomp' 'hwinfo' 'qt5-svg' 'polkit-qt5' 'gtk-update-icon-cache' 'plasma-framework'
+depends=('kconfig5' 'kcoreaddons5' 'kiconthemes5' 'ki18n5' 'kio5' 'solid5' 'yaml-cpp' 'kpmcore' 'mkinitcpio-openswap'
+         'boost-libs' 'ckbcomp' 'hwinfo' 'qt5-svg' 'polkit-qt5' 'gtk-update-icon-cache' 'plasma-framework5'
          'qt5-xmlpatterns' 'squashfs-tools' 'libpwquality' 'boost') # 'pythonqt>=3.2')
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'git' 'boost')
 backup=('usr/share/calamares/modules/bootloader.conf'
@@ -18,7 +18,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
 source=("$pkgname-$pkgver-$pkgrel.tar.gz::$url/v$pkgver/calamares-$pkgver.tar.gz")
-sha256sums=('9ec6c49f4e2316cd3058d402c2ab65efff02e3f09a0028d50f0359e5154e6c8c')
+sha256sums=('a0fbcec2a438693753fc174220356119ad7adb8a2b19c317518aa1cb025d6dd0')
 
 prepare() {
 	cd ${srcdir}/calamares-${pkgver}
@@ -27,10 +27,10 @@ prepare() {
 
 	# modify desktop file
 	sed -i -e 's#Exec=sh.*#Exec=sh -c "/etc/calamares/launch.sh"#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-	sed -i -e 's#Name=.*#Name=Install Arch Linux#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-	sed -i -e 's#GenericName=.*#GenericName=Arch Linux Installer#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-	sed -i -e 's#Icon=.*#Icon=archlinux-logo#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
-	sed -i -e 's#Comment=.*#Comment=Arch Linux Installer#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
+	sed -i -e 's#Name=.*#Name=Install Parch Linux#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
+	sed -i -e 's#GenericName=.*#GenericName=Parch Linux Installer#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
+	sed -i -e 's#Icon=.*#Icon=parchinstall#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
+	sed -i -e 's#Comment=.*#Comment=Parch Linux Installer#g' "$srcdir/${pkgname}-${pkgver}/calamares.desktop"
 
 
 	# patches here
