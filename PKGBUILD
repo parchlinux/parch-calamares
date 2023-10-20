@@ -1,4 +1,4 @@
-# SOURCE: https://github.com/arch-linux-gui/alg-pkgbuild/tree/main/calamares
+
 
 pkgname=calamares
 pkgver=3.2.62
