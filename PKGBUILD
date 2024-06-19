@@ -1,15 +1,15 @@
 
 
 pkgname=calamares
-pkgver=3.3.5
-pkgrel=3
+pkgver=3.3.6
+pkgrel=7
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
 url="https://github.com/calamares/calamares/releases/download"
 license=('LGPL')
 depends=( 'qt6-svg' 'qt6-webengine' 'yaml-cpp' 'networkmanager' 'upower' 'kcoreaddons' 'kconfig' 'ki18n' 'kservice' \
-'kwidgetsaddons' 'kpmcore' 'squashfs-tools' 'rsync' 'pybind11' 'cryptsetup' 'doxygen' 'dmidecode' \
+'kwidgetsaddons' 'kpmcore' 'squashfs-tools' 'rsync' 'boost' 'pybind11' 'cryptsetup' 'doxygen' 'dmidecode' \
 'gptfdisk' 'hwinfo' 'kparts' 'polkit-qt6' 'python' 'solid' 'qt6-tools' 'libpwquality' 'ckbcomp' 'qt6-declarative' )
 makedepends=('git' 'cmake' 'extra-cmake-modules' 'python-jsonschema' 'python-pyaml' 'python-unidecode' 'gawk')
 backup=('usr/share/calamares/modules/bootloader.conf'
@@ -18,7 +18,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
 source=("$pkgname-$pkgver-$pkgrel.tar.gz::$url/v$pkgver/calamares-$pkgver.tar.gz")
-sha256sums=('65b11d6bb2ba76fc74fed08faa4b6fe43d1a5bf4a2522b30fc43b44151686c47')
+sha256sums=('ba7e8314ac45a30570597a13efc7ec79450c2df803096c941a8e9a8ffbd92eeb')
 
 prepare() {
     cd ${srcdir}/calamares-${pkgver}
@@ -58,7 +58,7 @@ build() {
         -DWITH_QT6=ON \
         -DSKIP_MODULES="dracut dracutlukscfg \
         dummycpp dummyprocess dummypython dummypythonqt \
-		license notesqml oemid \
+		license notesqml \
         openrcdmcryptcfg fsresizer \
         rawfs mkinitfs contextualprocess interactiveterminal \
         plymouthcfg plasmalnf services-openrc \
