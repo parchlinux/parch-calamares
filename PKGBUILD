@@ -1,8 +1,8 @@
 
 
 pkgname=calamares
-pkgver=3.3.6
-pkgrel=7
+pkgver=3.3.7
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -18,7 +18,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
 source=("$pkgname-$pkgver-$pkgrel.tar.gz::$url/v$pkgver/calamares-$pkgver.tar.gz")
-sha256sums=('ba7e8314ac45a30570597a13efc7ec79450c2df803096c941a8e9a8ffbd92eeb')
+sha256sums=('56589968f2447a2e79da67079602dabc77504bc0f8233b5e655a1a4d57007a34')
 
 prepare() {
     cd ${srcdir}/calamares-${pkgver}
